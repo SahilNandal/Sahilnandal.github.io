@@ -702,7 +702,7 @@
       transition: padding-left 0.3s var(--ease-out);
     }
     @media (min-width: 768px) {
-      .project { grid-template-columns: 72px 1fr auto; gap: 48px; align-items: center; }
+      .project { grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
     }
 
     /* Hover fill effect */
@@ -722,11 +722,7 @@
     .project:hover { padding-left: 16px; }
 
     .project__year {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-      color: var(--charcoal-3);
-      text-transform: uppercase;
+      display: none;
     }
     .project__body { display: flex; flex-direction: column; gap: 8px; max-width: 68ch; }
     .project__title {
@@ -804,7 +800,8 @@
       gap: 40px;
     }
     @media (min-width: 768px)  { .skills-grid { grid-template-columns: repeat(2,1fr); gap: 48px; } }
-    @media (min-width: 1100px) { .skills-grid { grid-template-columns: repeat(4,1fr); } }
+    @media (min-width: 1100px) { .skills-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (min-width: 1400px) { .skills-grid { grid-template-columns: repeat(5,1fr); } }
 
     .skill-col__label {
       font-family: var(--font-mono);
@@ -1107,9 +1104,9 @@
           <h2 class="section__title reveal reveal-delay-1" id="about-title">Hello.</h2>
         </header>
         <div class="about__body">
-          <p class="about__intro reveal reveal-delay-2">A computer scientist who likes hard problems.</p>
+          <p class="about__intro reveal reveal-delay-2">A software engineer who treats latency as a feature.</p>
           <div class="about__prose reveal reveal-delay-3">
-            <p>I'm Sahil — a Computer Science and Applied Mathematics and Statistics student at Stony Brook University who loves building things that are <strong>fast, reliable, and don't fall apart under pressure</strong>.</p>
+            <p>I'm Sahil — a junior studying Computer Science and Applied Mathematics and Statistics at Stony Brook University who loves building things that are <strong>fast, reliable, and don't fall apart under pressure</strong>.</p>
             <p>I've shipped production features serving 10K+ concurrent users, built distributed systems from scratch — Raft consensus, fault-tolerant task queues, a SQL engine — and obsess over the details that make software actually work: latency, correctness, and scale.</p>
             <p>I'm drawn to hard engineering problems across the full stack, whether that's designing a system that survives network partitions or optimizing a query that was silently killing performance.</p>
           </div>
@@ -1129,13 +1126,13 @@
           <li class="exp-item reveal">
             <div class="exp-date">May 2025 — Aug 2025</div>
             <div>
-              <h3 class="exp-role">Software Engineer Intern</h3>
+              <h3 class="exp-role">Software Engineering Intern — Full Stack</h3>
               <p class="exp-company">Key Events Solutions</p>
               <ul class="exp-bullets">
-                <li>Optimized REST APIs and PostgreSQL schemas in Django, cutting average response latency by 40% on data-heavy endpoints serving 10K+ concurrent users.</li>
-                <li>Implemented RBAC with JWT authentication across 5+ user roles, eliminating unauthorized access incidents in production.</li>
-                <li>Resolved critical production bugs via structured logging and query analysis, improving system uptime by 15%.</li>
-                <li>Shipped 8+ features end-to-end across Agile sprints, from schema design through deployment on a high-volume event platform.</li>
+                <li>Optimized REST APIs and PostgreSQL schemas in Django, reducing average response latency by <strong>40%</strong> on data-heavy endpoints serving <strong>10K+ concurrent users</strong>.</li>
+                <li>Designed and enforced role-based access control (RBAC) with JWT authentication across <strong>5+ user roles</strong>, eliminating unauthorized access incidents in production.</li>
+                <li>Diagnosed and resolved critical production bugs via structured logging and query analysis, improving system uptime by <strong>15%</strong>.</li>
+                <li>Delivered <strong>8+ features</strong> end-to-end across Agile sprints — schema design through CI/CD deployment — on a high-volume event management platform.</li>
               </ul>
             </div>
             <div class="exp-loc">Remote</div>
@@ -1144,13 +1141,13 @@
           <li class="exp-item reveal reveal-delay-2">
             <div class="exp-date">May 2024 — Aug 2024</div>
             <div>
-              <h3 class="exp-role">Software Engineer Intern</h3>
+              <h3 class="exp-role">Software Engineering Intern</h3>
               <p class="exp-company">Cosmotech Expo India</p>
               <ul class="exp-bullets">
-                <li>Designed REST APIs for ingestion, processing, and retrieval across 3 internal systems handling 500K+ daily records.</li>
-                <li>Reduced average query latency by 30% via targeted indexing, query rewrites, and denormalization of hot-path tables.</li>
-                <li>Built automated validation pipelines catching 95%+ of data integrity issues before reaching downstream consumers.</li>
-                <li>Hardened system reliability with structured logging, centralized error handling, and token-based authentication.</li>
+                <li>Architected and shipped REST APIs for ingestion, processing, and retrieval across 3 internal systems handling <strong>500K+ daily records</strong>.</li>
+                <li>Reduced average query latency by <strong>30%</strong> via targeted indexing, query rewrites, and strategic denormalization of hot-path tables.</li>
+                <li>Built a configurable data validation pipeline catching <strong>95%+</strong> of data integrity issues — missing fields, duplicate IDs, malformed emails, schema mismatches — before reaching downstream consumers.</li>
+                <li>Hardened system reliability through structured logging, centralized error handling, and token-based authentication across all API surfaces.</li>
               </ul>
             </div>
             <div class="exp-loc">Remote</div>
@@ -1176,8 +1173,8 @@
                 <div class="project__year">2026</div>
                 <div class="project__body">
                   <h3 class="project__title">Lightweight SQL Query Engine</h3>
-                  <p class="project__desc">Built a query engine from scratch supporting SELECT, JOIN, GROUP BY, and aggregations with columnar storage and a cost-based optimizer.</p>
-                  <p class="project__highlight">Within 3× of DuckDB on TPC-H · 60% faster via predicate pushdown</p>
+                  <p class="project__desc">Built from scratch supporting SELECT, JOIN, GROUP BY, and aggregations with columnar storage and a cost-based optimizer. Implemented buffer pool manager with LRU-K eviction and page-level locking.</p>
+                  <p class="project__highlight">Within 3× of DuckDB on TPC-H · 60% faster query execution via predicate pushdown &amp; join reordering</p>
                   <ul class="project__stack" aria-label="Technologies used">
                     <li class="stack-tag">Java</li>
                     <li class="stack-tag">Python</li>
@@ -1193,7 +1190,7 @@
                 <div class="project__year">2026</div>
                 <div class="project__body">
                   <h3 class="project__title">Distributed Task Queue</h3>
-                  <p class="project__desc">Fault-tolerant job queue supporting 1M+ scheduled tasks with priority lanes, concurrency, and retry logic with exponential backoff.</p>
+                  <p class="project__desc">Fault-tolerant job queue supporting 1M+ scheduled tasks with priority lanes, concurrency controls, and exponential-backoff retry. Enforced exactly-once semantics via idempotency keys and a transactional state machine.</p>
                   <p class="project__highlight">5K+ tasks/sec · lock-free queue design · batched Redis pipelining</p>
                   <ul class="project__stack" aria-label="Technologies used">
                     <li class="stack-tag">Java</li>
@@ -1211,8 +1208,8 @@
                 <div class="project__year">2025</div>
                 <div class="project__body">
                   <h3 class="project__title">Distributed Key-Value Store</h3>
-                  <p class="project__desc">Raft-based KV store with write-ahead log crash recovery and log compaction; strong consistency under simulated network partitions.</p>
-                  <p class="project__highlight">70% faster recovery on large datasets · majority-quorum commits</p>
+                  <p class="project__desc">Raft-based KV store with WAL crash recovery and log compaction; maintained correctness across leader election, follower replication, and partition recovery. Enforced strong consistency via majority-based quorum commits.</p>
+                  <p class="project__highlight">70% faster recovery on large datasets · correct under simulated network partitions</p>
                   <ul class="project__stack" aria-label="Technologies used">
                     <li class="stack-tag">Java</li>
                     <li class="stack-tag">Spring Boot</li>
@@ -1228,8 +1225,8 @@
                 <div class="project__year">2026</div>
                 <div class="project__body">
                   <h3 class="project__title">ThreadPool &amp; Concurrency Library</h3>
-                  <p class="project__desc">Work-stealing thread pool from scratch with lock-free deques, plus futures, semaphores, and barrier synchronization primitives.</p>
-                  <p class="project__highlight">2.8× speedup over java.util.concurrent on CPU-bound workloads</p>
+                  <p class="project__desc">Work-stealing thread pool from scratch with lock-free deques. Implemented futures, semaphores, and barrier synchronization primitives; validated via extensive stress-testing and race-condition simulation.</p>
+                  <p class="project__highlight">2.8× speedup over java.util.concurrent on CPU-bound workloads under high contention</p>
                   <ul class="project__stack" aria-label="Technologies used">
                     <li class="stack-tag">Java</li>
                     <li class="stack-tag">C++</li>
@@ -1252,31 +1249,13 @@
                 <div class="project__year">2024</div>
                 <div class="project__body">
                   <h3 class="project__title">CivicRAG — Hybrid Retrieval System</h3>
-                  <p class="project__desc">Combined BM25 sparse search and dense vector embeddings with cross-encoder reranking for civic document retrieval.</p>
-                  <p class="project__highlight">35% lower hallucination · NDCG@10 +22% via RAGAS-tuned reranking</p>
+                  <p class="project__desc">Combined BM25 sparse search with dense vector embeddings and cross-encoder reranking to build a hybrid civic document retrieval pipeline. Iteratively evaluated with RAGAS to tune the reranker.</p>
+                  <p class="project__highlight">35% lower hallucination rate · NDCG@10 +22% via RAGAS-tuned reranking</p>
                   <ul class="project__stack" aria-label="Technologies used">
                     <li class="stack-tag">Python</li>
                     <li class="stack-tag">PostgreSQL</li>
                     <li class="stack-tag">pgvector</li>
                     <li class="stack-tag">RAGAS</li>
-                  </ul>
-                </div>
-                <span class="project__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-
-            <li class="reveal reveal-delay-1">
-              <a class="project" href="https://github.com/SahilNandal/data-validation-pipeline" target="_blank" rel="noopener noreferrer" aria-label="Data Validation Pipeline — view on GitHub (opens in new tab)">
-                <div class="project__year">2025</div>
-                <div class="project__body">
-                  <h3 class="project__title">Data Validation Pipeline</h3>
-                  <p class="project__desc">Configurable validation rules for missing fields, duplicates, malformed emails, invalid timestamps, and per-event-type business logic; loads clean records into PostgreSQL.</p>
-                  <p class="project__highlight">95%+ integrity catch-rate · pytest + GitHub Actions CI</p>
-                  <ul class="project__stack" aria-label="Technologies used">
-                    <li class="stack-tag">Python</li>
-                    <li class="stack-tag">PostgreSQL</li>
-                    <li class="stack-tag">Docker</li>
-                    <li class="stack-tag">Pandas</li>
                   </ul>
                 </div>
                 <span class="project__arrow" aria-hidden="true">↗</span>
@@ -1311,18 +1290,26 @@
             </ul>
           </div>
           <div class="skill-col reveal reveal-delay-2">
-            <h3 class="skill-col__label">Data &amp; Infra</h3>
+            <h3 class="skill-col__label">Databases &amp; Infra</h3>
             <ul>
               <li>PostgreSQL</li><li>MySQL</li><li>Redis</li>
-              <li>Kafka</li><li>Docker</li>
+              <li>Kafka</li><li>Docker</li><li>GitHub Actions</li>
             </ul>
           </div>
           <div class="skill-col reveal reveal-delay-3">
-            <h3 class="skill-col__label">Concepts</h3>
+            <h3 class="skill-col__label">Systems &amp; Concepts</h3>
             <ul>
               <li>Distributed Systems</li><li>Concurrency</li>
               <li>Fault Tolerance</li><li>System Design</li>
-              <li>Caching &amp; Indexing</li><li>RAG &amp; Vector Search</li>
+              <li>Caching &amp; Indexing</li>
+            </ul>
+          </div>
+          <div class="skill-col reveal reveal-delay-4">
+            <h3 class="skill-col__label">ML &amp; Data</h3>
+            <ul>
+              <li>Vector Search (pgvector)</li><li>BM25</li>
+              <li>RAG Pipelines</li><li>RAGAS Evaluation</li>
+              <li>pandas</li><li>NumPy</li>
             </ul>
           </div>
         </div>
