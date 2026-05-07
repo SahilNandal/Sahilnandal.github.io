@@ -239,7 +239,31 @@
     .site-nav a:hover { color: var(--charcoal); }
     .site-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
 
-    /* Nav CTA button */
+    /* Nav resume download */
+    .nav-resume {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      border: 1px solid var(--rule-strong);
+      padding: 7px 14px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s var(--spring);
+    }
+    .nav-resume:hover {
+      border-color: var(--charcoal);
+      background: var(--charcoal);
+      color: var(--cream);
+      transform: translateY(-1px);
+    }
+    .nav-resume:active { transform: scale(0.97); }
+    .nav-resume::after { display: none !important; }
+    @media (max-width: 640px) { .nav-resume { display: none; } }
     .nav-cta {
       font-size: 12px;
       font-family: var(--font-mono);
@@ -1040,6 +1064,9 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="Resume_Sahil_Nandal.pdf" download="Resume_Sahil_Nandal.pdf" class="nav-resume" aria-label="Download resume PDF">
+          <span aria-hidden="true">↓</span> Resume
+        </a>
         <a href="mailto:sahil.nandal116@gmail.com" class="nav-cta" aria-label="Hire me — send email">
           <span>Hire me</span>
         </a>
@@ -1091,6 +1118,10 @@
           <a href="mailto:sahil.nandal116@gmail.com" class="btn-secondary">
             <span>Get in touch</span>
             <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="Resume_Sahil_Nandal.pdf" download="Resume_Sahil_Nandal.pdf" class="btn-secondary" aria-label="Download resume PDF">
+            <span aria-hidden="true">↓</span>
+            <span>Resume</span>
           </a>
         </div>
       </div>
